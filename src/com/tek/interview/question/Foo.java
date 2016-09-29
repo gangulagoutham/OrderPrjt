@@ -165,7 +165,7 @@ class calculator {
 				double totalprice = r.get(i).getItem().getPrice() + Math.floor(tax);
 
 				// Print out the item's total price
-				System.out.println(r.get(i).getItem().getDescription() + ": " + Math.floor(totalprice));
+				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + Math.floor(totalprice));
 
 				// Keep a running total
 				totalTax += tax;
