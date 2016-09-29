@@ -81,8 +81,9 @@ class OrderLine {
 			throw new Exception("Item is NULL");
 		}
 		assert quantity > 0;
-		item = item;
-		quantity = quantity;
+		//bug2
+		this.item = item;
+		this.quantity = quantity;
 	}
 
 	public Item getItem() {
@@ -96,6 +97,7 @@ class OrderLine {
 
 class Order {
 
+	//bug1
 	private List<OrderLine> orderLines=new ArrayList<OrderLine>();
 
 	public void add(OrderLine o) throws Exception {
