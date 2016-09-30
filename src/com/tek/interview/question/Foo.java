@@ -142,7 +142,7 @@ class calculator {
 		// Iterate through the orders
 		for (Map.Entry<String, Order> entry : o.entrySet()) {
 			System.out.println("*******" + entry.getKey() + "*******");
-			grandtotal = 0;
+			//bug11 removed setting grandtotal to zero
 
 			Order r = entry.getValue();
 
