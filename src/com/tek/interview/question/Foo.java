@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /* ****************************************************************************************
  
@@ -190,7 +191,8 @@ public class Foo {
 
 	public static void main(String[] args) throws Exception {
 
-		Map<String, Order> o = new HashMap<String, Order>();
+		//bug6 used TreeMap for sorting orders
+		Map<String, Order> o = new TreeMap<String, Order>();
 
 		Order c1 = new Order();
 
