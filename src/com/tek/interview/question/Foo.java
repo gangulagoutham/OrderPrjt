@@ -165,10 +165,10 @@ class calculator {
 				}
 
 				// Calculate the total price
-				double totalprice = r.get(i).getItem().getPrice() + Math.floor(tax);
+				double totalprice = r.get(i).getItem().getPrice() + tax;
 
 				// Print out the item's total price
-				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + rounding(totalprice));
+				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + Math.floor(totalprice));
 
 				// Keep a running total
 				totalTax += tax;
