@@ -1,5 +1,7 @@
 package com.tek.interview.question;
 
+import static org.junit.Assert.*;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -7,6 +9,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+
+import org.junit.Test;
+
 
 /* ****************************************************************************************
  
@@ -42,6 +47,7 @@ Sum of orders: 153.81
  * represents an item, contains a price and a description.
  *
  */
+
 class Item {
 
 	private String description;
@@ -234,4 +240,32 @@ public class Foo {
 		new calculator().calculate(o);
 
 	}
+	private static final double DELTA = 1e-15;
+
+	//testcase for adding item
+	@Test
+	public void testAddItem() 
+	{
+	    
+	    assertEquals(10.0, new Item("book",10).getPrice(),DELTA);
+	}
+	
+	//testcase for adding OrderLine
+	@Test
+	public void testAddOrderLine() throws Exception 
+	{
+	    
+	    assertEquals(1, new OrderLine(new Item("Imported bottle of perfume", (float) 27.99), 1).getQuantity());
+	}
+	//testcase for adding Order
+	@Test
+	public void testAddOrder() throws Exception
+	{
+		Order c3 = new Order();
+		c3.add(new OrderLine(new Item("Imported bottle of perfume", (float) 27.99), 1));
+	    assertEquals(1,c3.size());
+	}
+
+	
+	
 }
