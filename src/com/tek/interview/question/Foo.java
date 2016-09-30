@@ -164,11 +164,14 @@ class calculator {
 					tax = rounding(r.get(i).getItem().getPrice() * 0.10);
 				}
 
+				//bug8 removed math.floor for tax
 				// Calculate the total price
 				double totalprice = r.get(i).getItem().getPrice() + tax;
 
+				
+				//bug9 used modified rounding method when ever needed
 				// Print out the item's total price
-				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + Math.floor(totalprice));
+				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + rounding(totalprice));
 
 				// Keep a running total
 				totalTax += tax;
@@ -176,16 +179,16 @@ class calculator {
 			}
 
 			// Print out the total taxes
-			System.out.println("Sales Tax: " + Math.floor(totalTax));
+			System.out.println("Sales Tax: " + rounding(totalTax));
 
 			total = total + totalTax;
 
 			// Print out the total amount
-			System.out.println("Total: " + Math.floor(total * 100) / 100);
+			System.out.println("Total: " + rounding(total));
 			grandtotal += total;
 		}
 
-		System.out.println("Sum of orders: " + Math.floor(grandtotal * 100) / 100);
+		System.out.println("Sum of orders: " + rounding(grandtotal));
 	}
 }
 
