@@ -124,8 +124,9 @@ class Order {
 
 class calculator {
 
+	//bug7 changed rounding method
 	public static double rounding(double value) {
-		return ( (int) (value * 100)) / 100;
+		return ( Math.round(value * 100.0)) / 100.0;
 	}
 
 	/**
@@ -156,6 +157,7 @@ class calculator {
 				double tax = 0;
 
 				if (r.get(i).getItem().getDescription().contains("imported")) {
+					
 					tax = rounding(r.get(i).getItem().getPrice() * 0.15); // Extra 5% tax on
 					// imported items
 				} else {
@@ -166,7 +168,7 @@ class calculator {
 				double totalprice = r.get(i).getItem().getPrice() + Math.floor(tax);
 
 				// Print out the item's total price
-				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + Math.floor(totalprice));
+				System.out.println(r.get(i).getQuantity()+" "+r.get(i).getItem().getDescription() + ": " + rounding(totalprice));
 
 				// Keep a running total
 				totalTax += tax;
